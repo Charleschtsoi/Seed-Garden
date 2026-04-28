@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Seed Garden | Calm Emotional Support</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -11,9 +17,11 @@
     <header class="site-header">
       <p class="brand">Seed Garden</p>
       <nav class="site-nav" aria-label="Primary">
+        <a href="#problem">Purpose</a>
         <a href="#rituals">Rituals</a>
         <a href="#meditation">Meditation</a>
         <a href="#insights">Insights</a>
+        <a href="#wind-chime">Wind</a>
         <a href="#study">Study</a>
       </nav>
     </header>
@@ -33,22 +41,35 @@
           </div>
         </div>
 
-        <article class="phone phone-home" aria-label="Home screen preview">
-          <div class="phone-top">
-            <img src="./assets/profile-avatar.png" alt="" />
-            <p>Good evening, 觀石者</p>
-          </div>
-          <div class="poem">
-            <p>人 閑 桂 花 落，</p>
-            <p>夜 靜 春 山 空。</p>
-          </div>
-          <img src="./assets/home-mascot.png" alt="" class="mascot" />
-          <div class="ritual-row" aria-label="Core rituals">
-            <span>坐</span>
-            <span>錄</span>
-            <span>聞</span>
-            <span>研</span>
-          </div>
+        <div class="hero-visual">
+          <article class="phone phone-home" aria-label="Home screen preview">
+            <div class="phone-top">
+              <img src="./assets/profile-avatar.svg" alt="" />
+              <p>Good evening, 觀石者</p>
+            </div>
+            <div class="poem">
+              <p>人 閑 桂 花 落，</p>
+              <p>夜 靜 春 山 空。</p>
+            </div>
+            <img src="./assets/home-mascot.png" alt="" class="mascot" />
+            <div class="ritual-row" aria-label="Core rituals">
+              <span>坐</span>
+              <span>錄</span>
+              <span>聞</span>
+              <span>研</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section problem" id="problem">
+        <article class="card calm-banner">
+          <h2>When everything feels loud, begin quietly.</h2>
+          <p>
+            Seed Garden is designed for people who need emotional space, not productivity
+            pressure. The experience guides calm, reflection, and steady practice at a
+            gentle pace.
+          </p>
         </article>
       </section>
 
@@ -97,75 +118,115 @@
         <article class="phone phone-meditation" aria-label="Meditation screen preview">
           <p class="scene-label">夜景</p>
           <img src="./assets/meditation-mascot.png" alt="" class="mascot" />
-          <p class="companions">83 people is meditating with you</p>
+          <p class="companions">83 people are meditating with you</p>
           <div class="duration-row">
-            <button type="button">15 分鐘</button>
-            <button type="button">30 分鐘</button>
-            <button type="button">45 分鐘</button>
-            <button type="button">60 分鐘</button>
+            <button type="button" class="btn btn-chip">15 分鐘</button>
+            <button type="button" class="btn btn-chip">30 分鐘</button>
+            <button type="button" class="btn btn-chip">45 分鐘</button>
+            <button type="button" class="btn btn-chip">60 分鐘</button>
           </div>
           <button type="button" class="btn btn-primary full">Start</button>
+          <p class="completion-note">Peace and stillness is here.</p>
         </article>
       </section>
 
-      <section class="section split" id="insights">
+      <section class="section split insight-section" id="insights">
         <div class="copy">
-          <p class="eyebrow">Emotion and journal</p>
-          <h2>Meditation to reflection to insight</h2>
+          <p class="eyebrow">Emotion insight</p>
+          <h2>Notice patterns with kindness</h2>
           <p>
-            The workflow follows a supportive loop: complete practice, record mood, write a
-            short note, and observe weekly emotional trends.
+            Reflection data is meant to support awareness, not judge performance. Weekly
+            signals help users notice what brings steadiness.
           </p>
           <ol class="flow-list">
             <li>Complete a meditation session</li>
             <li>Select current emotion</li>
-            <li>Write a short notebook entry</li>
-            <li>Review weekly emotion patterns</li>
+            <li>Observe weekly emotional rhythm</li>
           </ol>
         </div>
         <div class="stack">
           <article class="card insight-card">
             <h3>This week</h3>
             <div class="emotion-row" aria-label="Weekly emotion samples">
-              <span>🙂</span><span>😌</span><span>😐</span><span>😊</span><span>🙂</span><span>😴</span><span>😌</span>
+              <span>Mon · Clear</span>
+              <span>Tue · Grounded</span>
+              <span>Wed · Neutral</span>
+              <span>Thu · Calm</span>
+              <span>Fri · Reflective</span>
+              <span>Sat · Rested</span>
+              <span>Sun · Balanced</span>
             </div>
-            <p>Total meditation: 1,039 hours</p>
-            <p>Consecutive days: 3</p>
+            <p>This week you showed up for 3 gentle sessions.</p>
+            <p>Your evening sits felt the most settling.</p>
           </article>
+        </div>
+      </section>
+
+      <section class="section split journal-section" id="journal">
+        <div class="copy">
+          <p class="eyebrow">Journal reflection</p>
+          <h2>Turn feelings into a mindful note</h2>
+          <p>
+            After each session, users can record a short reflection. Over time, this builds
+            an honest emotional journal that supports self-understanding.
+          </p>
+          <ul class="feature-list">
+            <li>Session timestamp and duration</li>
+            <li>Emotion check-in linked to notes</li>
+            <li>A quiet record of growth over time</li>
+          </ul>
+        </div>
+        <div class="stack">
           <article class="card journal-card">
             <h3>禪悅筆記</h3>
             <p class="meta">2026年8月8日 18:06 · 坐禪45分鐘</p>
             <p>
-              A short mindful note appears here to show how the app turns meditation into
-              personal emotional reflection.
+              一炷香消，移刻之間，世界彷彿安靜了下來。焦慮漸次沉澱，心境回到更寬闊的地方。
             </p>
           </article>
         </div>
       </section>
 
-      <section class="section split" id="study">
-        <article class="card wind-card">
+      <section class="section split wind-section" id="wind-chime">
+        <article class="card wind-card quick-comfort">
           <h2>聞 Wind chime</h2>
           <p>鈴不自鳴，唯風動而響，隨勢而應。</p>
           <p class="meta">Current wind speed: 37 km/h</p>
+          <p class="meta">A quick comfort ritual when you do not want a full sit.</p>
           <button type="button" class="btn btn-quiet">Play calming sound</button>
         </article>
         <div class="copy">
+          <p class="eyebrow">Quick comfort</p>
+          <h2>One breath, one sound, one pause</h2>
+          <p>
+            Wind chime mode gives a gentle reset in moments of emotional noise. It is a
+            short ritual for returning to calm before continuing the day.
+          </p>
+        </div>
+      </section>
+
+      <section class="section split" id="study">
+        <div class="copy">
           <p class="eyebrow">研 Study</p>
           <h2>Learn and return to practice</h2>
+          <p>
+            Brief lessons connect understanding to action, so every topic can end in one
+            simple meditation step.
+          </p>
           <div class="grid two">
             <article class="card small"><h3>坐禪的好處</h3><p>Understand practical benefits.</p></article>
             <article class="card small"><h3>如何坐禪？</h3><p>Foundations for beginners.</p></article>
             <article class="card small"><h3>調息之道</h3><p>Breathing and calm focus.</p></article>
             <article class="card small"><h3>禪宗文化</h3><p>Culture and context.</p></article>
           </div>
+          <a class="btn btn-quiet" href="#meditation">Try a 15-minute practice</a>
         </div>
       </section>
 
       <section class="section cta">
         <h2>Start gently, grow steadily.</h2>
         <p>Seed Garden supports calm practice, emotional reflection, and mindful growth.</p>
-        <a class="btn btn-primary" href="#main-content">Begin now</a>
+        <a class="btn btn-primary" href="#meditation">Begin with one quiet moment</a>
       </section>
     </main>
   </body>
