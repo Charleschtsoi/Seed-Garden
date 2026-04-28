@@ -1,0 +1,457 @@
+:root {
+  --bg-main: #ece9e2;
+  --bg-card: #f4f1ea;
+  --bg-muted: #cccbc3;
+  --bg-olive: #8e8c7f;
+  --text-main: #22211f;
+  --text-soft: #625f58;
+  --accent: #b1894d;
+  --line: #d6d1c8;
+  --radius: 16px;
+  --radius-lg: 24px;
+  --shadow: 0 20px 48px rgba(23, 22, 20, 0.12);
+  --container: 1100px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family:
+    "Montserrat", "Noto Sans JP", Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.45;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.1;
+  background: center / 320px auto repeat url("./assets/seed-garden-background.png");
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -100px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #fff;
+  background: #121212;
+  z-index: 20;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px clamp(16px, 3vw, 32px);
+  border-bottom: 1px solid rgba(214, 209, 200, 0.8);
+  backdrop-filter: blur(8px);
+  background: rgba(236, 233, 226, 0.9);
+}
+
+.brand {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.site-nav {
+  display: flex;
+  gap: clamp(12px, 2vw, 20px);
+}
+
+.site-nav a {
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: var(--text-main);
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+.section {
+  width: min(100% - 32px, var(--container));
+  margin-inline: auto;
+  padding: clamp(32px, 6vw, 72px) 0;
+}
+
+.section h1,
+.section h2,
+.section h3 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.section h1 {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+}
+
+.section h2 {
+  font-size: clamp(1.55rem, 3vw, 2.25rem);
+}
+
+.section h3 {
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+}
+
+.section p {
+  color: var(--text-soft);
+}
+
+.copy {
+  display: grid;
+  gap: 14px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 11px 16px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 140ms ease;
+}
+
+.btn-primary {
+  color: #fff;
+  background: var(--accent);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  filter: brightness(0.95);
+}
+
+.btn-quiet {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.75);
+  border-color: var(--line);
+}
+
+.btn-quiet:hover,
+.btn-quiet:focus-visible {
+  background: #fff;
+}
+
+.btn.full {
+  width: 100%;
+}
+
+.hero {
+  display: grid;
+  gap: 24px;
+}
+
+.grid {
+  display: grid;
+  gap: 12px;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(244, 241, 234, 0.92);
+  padding: 16px;
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+.phone {
+  width: min(100%, 375px);
+  min-height: 650px;
+  border-radius: 30px;
+  border: 1px solid rgba(120, 114, 103, 0.2);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.phone-home {
+  position: relative;
+  padding: 22px 18px;
+  background: var(--bg-main);
+}
+
+.phone-home .phone-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.phone-home .phone-top img {
+  width: 48px;
+  height: 48px;
+}
+
+.phone-home .phone-top p {
+  margin: 0;
+  color: var(--text-main);
+}
+
+.poem {
+  margin-top: 92px;
+  text-align: right;
+}
+
+.poem p {
+  margin: 0;
+  color: #131313;
+  line-height: 1.85;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  display: inline-block;
+  margin-left: 18px;
+}
+
+.phone-home .mascot {
+  display: block;
+  width: 80px;
+  margin: 80px 40px 0 auto;
+}
+
+.ritual-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 84px;
+}
+
+.ritual-row span {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: #b8b6ab;
+  font-size: 1.1rem;
+}
+
+.needs h2,
+.rituals h2 {
+  margin-bottom: 16px;
+}
+
+.chip-card {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 16px 8px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: rgba(244, 241, 234, 0.92);
+}
+
+.chip-card p {
+  margin: 0;
+}
+
+.ritual-icon {
+  width: 56px;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: #b8b6ab;
+}
+
+.split {
+  display: grid;
+  gap: 20px;
+}
+
+.feature-list,
+.flow-list {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text-soft);
+  display: grid;
+  gap: 6px;
+}
+
+.phone-meditation {
+  background: linear-gradient(180deg, var(--bg-olive) 0 62%, var(--bg-muted) 62% 100%);
+  padding: 18px;
+  display: grid;
+  align-content: end;
+  gap: 12px;
+}
+
+.phone-meditation .scene-label {
+  margin: 110px 0 0;
+  text-align: center;
+  color: #1c1c1c;
+}
+
+.phone-meditation .mascot {
+  width: 112px;
+  margin: auto;
+}
+
+.companions {
+  margin: 0;
+  text-align: center;
+}
+
+.duration-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.duration-row button {
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 6px;
+  padding: 8px;
+  color: #333;
+}
+
+.duration-row button:hover,
+.duration-row button:focus-visible {
+  border-color: var(--accent);
+}
+
+.stack {
+  display: grid;
+  gap: 12px;
+}
+
+.emotion-row {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+  margin: 10px 0 14px;
+}
+
+.emotion-row span {
+  display: grid;
+  place-items: center;
+  padding: 8px 0;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.meta {
+  font-size: 0.9rem;
+}
+
+.wind-card {
+  background: linear-gradient(160deg, #f7f3ea, #efede8);
+}
+
+.wind-card h2 {
+  margin-bottom: 8px;
+}
+
+.wind-card .btn {
+  margin-top: 6px;
+}
+
+.small {
+  padding: 14px;
+}
+
+.small h3 {
+  margin-bottom: 6px;
+}
+
+.cta {
+  text-align: center;
+  padding-bottom: 92px;
+}
+
+.cta p {
+  max-width: 580px;
+  margin-inline: auto;
+}
+
+.cta .btn {
+  margin-top: 4px;
+}
+
+@media (max-width: 700px) {
+  .site-nav {
+    display: none;
+  }
+}
+
+@media (min-width: 720px) {
+  .grid.three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .grid.four {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .grid.two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero,
+  .split {
+    grid-template-columns: 1.08fr 0.92fr;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: 82px 0;
+  }
+
+  .site-header {
+    padding-inline: max(32px, calc((100vw - var(--container)) / 2));
+  }
+}
