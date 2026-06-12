@@ -11,17 +11,20 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./flow.css" />
   </head>
-  <body>
+  <body class="flow-page">
     <a class="skip-link" href="#main-content">Skip to content</a>
 
     <header class="site-header">
       <nav class="site-nav" aria-label="Primary">
         <a href="./index.html" data-i18n="home">Home</a>
         <a href="./meditate.html" data-i18n="meditation">Meditation</a>
-        <a href="./wind-chime.html" data-i18n="windChime">Wind chime</a>
         <a href="./journal.html" data-i18n="journal">Mood journaling</a>
         <a href="./account.html" data-i18n="account">My account</a>
+        <a href="./sign-in.html" data-i18n="signIn">Sign in/up</a>
+        <a href="./about-meditation.html" data-i18n="aboutMeditation">About meditation</a>
+        <a href="./desktop-mate.html" data-i18n="desktopMate">Desktop mate</a>
         <a href="./support.html" aria-current="page" data-i18n="support">Support us</a>
         <div class="lang-toggle" role="group" aria-label="Language">
           <button type="button" class="lang-btn is-active" data-lang="en" aria-pressed="true">EN</button>
@@ -30,10 +33,12 @@
       </nav>
     </header>
 
-    <main id="main-content" class="placeholder-page">
-      <h1 data-i18n="support">Support us</h1>
-      <p>Help Seed Garden grow as a calm companion for the Hong Kong meditation community. This showcase page is coming soon.</p>
-      <a class="placeholder-back" href="./index.html" data-i18n="backHome">Back to Home</a>
+    <main id="main-content" class="flow-canvas">
+      <h1 class="flow-title" data-i18n="support">Support us</h1>
+      <p class="flow-body" data-i18n="supportHint">
+        Help Seed Garden grow as a calm companion for the Hong Kong meditation community. This showcase page is coming soon.
+      </p>
+      <a class="flow-secondary" href="./index.html" data-i18n="backHome">Back to Home</a>
     </main>
 
     <script src="./js/i18n-labels.js"></script>

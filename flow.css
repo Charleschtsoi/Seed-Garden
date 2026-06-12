@@ -226,6 +226,28 @@
   line-height: 1.4;
 }
 
+.about-list {
+  margin: 0 0 8px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 22rem;
+  text-align: left;
+}
+
+.about-list li {
+  padding: 12px 16px;
+  border: 1.5px solid rgba(75, 54, 33, 0.2);
+  border-radius: 14px;
+  background: var(--bubble);
+  font-size: clamp(1.05rem, 2.6vw, 1.25rem);
+  font-weight: 600;
+  color: var(--ink);
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

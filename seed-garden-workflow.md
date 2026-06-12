@@ -9,15 +9,13 @@ Product specs live in Notion under [Seed garden](https://app.notion.com/p/Seed-g
 | Seed garden (root) | [Open](https://app.notion.com/p/9887161f12618246b57d01a9f1059a8b) | Project overview |
 | Home | [Open](https://app.notion.com/p/15a7161f12618312ae5701c0a656bf58) | `index.html` |
 | Meditation mode | [Open](https://app.notion.com/p/af17161f126182fdb4a8013539aefaba) | `meditate.html` |
-| Mood Journaling | [Open](https://app.notion.com/p/d917161f1261826b8ff1014893077c9c) | Not built |
-| Sign in/up | [Open](https://app.notion.com/p/e757161f12618216909a018cbcc0a799) | Nav placeholder |
-| My account | [Open](https://app.notion.com/p/e517161f12618341809b015daa562266) | Nav placeholder |
-| Target user | [Open](https://app.notion.com/p/97e7161f126182638a5801fb7bce8d62) | — |
-| Character design | [Open](https://app.notion.com/p/e8b7161f126183ff871a0135a70a720d) | `assets/mascot.png` |
-| About meditation | [Open](https://app.notion.com/p/ebb7161f12618256a75581cba1db2b8f) | Not built |
-| Desktop mate | [Open](https://app.notion.com/p/0087161f126183e1b06c8118052c15fa) | Not built |
-| Chatbot | [Open](https://app.notion.com/p/bda7161f12618212812881685efec4de) | Not built |
-| Support us | [Open](https://app.notion.com/p/3ea7161f1261837b89fa81a91bed591d) | Not built |
+| Mood Journaling | [Open](https://app.notion.com/p/d917161f1261826b8ff1014893077c9c) | `journal.html` |
+| Sign in/up | [Open](https://app.notion.com/p/e757161f12618216909a018cbcc0a799) | `sign-in.html` |
+| About meditation | [Open](https://app.notion.com/p/ebb7161f12618256a75581cba1db2b8f) | `about-meditation.html` |
+| Desktop mate | [Open](https://app.notion.com/p/0087161f126183e1b06c8118052c15fa) | `desktop-mate.html` |
+| My account | [Open](https://app.notion.com/p/e517161f12618341809b015daa562266) | `account.html` |
+| Support us | [Open](https://app.notion.com/p/3ea7161f1261837b89fa81a91bed591d) | `support.html` |
+| Chatbot | [Open](https://app.notion.com/p/bda7161f12618212812881685efec4de) | Future — not in nav |
 
 ## Product Summary
 
@@ -87,14 +85,20 @@ Suggested response:
 
 **Notion spec** ([Home page](https://app.notion.com/p/15a7161f12618312ae5701c0a656bf58)):
 
-**Navigation menu**
+**Navigation menu** (product owner sitemap, 2026-06-12)
 - Home
 - Meditation
-- Wind chime
 - Mood journaling
 - My account
+- Sign in/up
+- About meditation
+- Desktop mate
 - Support us
 - Language toggle: EN / TC
+
+**Not in nav:** Chatbot (future). Sub-flow pages: `session.html`, `complete.html`, `check-in.html`.
+
+**Product scope:** Wind chime and Study deferred per product owner.
 
 **Head banner — daily wisdom**
 - User story: encounter a fresh teaching from Zen or Buddhist traditions each day upon opening the app, to start practice with a clear reflective intention.
@@ -111,11 +115,13 @@ Suggested response:
 **Purpose**
 The home screen is the emotional anchor. It invites the user into a quiet space and offers simple paths into practice.
 
-**Ritual actions** (Figma / app intent):
+**Ritual actions** (current web scope):
 - `坐`: meditation → `meditate.html`
-- `錄`: journal / record → mood journaling
-- `聞`: wind chime / ambient calming
-- `研`: study / learning
+- `錄`: journal / record → `journal.html`
+
+**Deferred** (Figma / Notion — not in current build):
+- `聞`: wind chime
+- `研`: study
 
 #### Web implementation status (`index.html`)
 
@@ -125,9 +131,11 @@ Last audited: 2026-06-12. MVP 1 home alignment shipped 2026-06-12.
 |-------------|----------------|--------|-------|
 | Home nav link | Home | Yes | `aria-current="page"` on `index.html` |
 | Meditation nav link | Meditation | Yes | Header nav + action tile → `meditate.html` |
-| Wind chime nav link | Wind chime | Yes | Nav + home tile → `wind-chime.html` |
 | Mood journaling nav link | Mood journaling | Yes | Nav + home tile → `journal.html` |
 | My account nav link | My account | Yes | Nav → `account.html` placeholder |
+| Sign in/up nav link | Sign in/up | Yes | Nav → `sign-in.html` placeholder |
+| About meditation nav link | About meditation | Yes | Nav → `about-meditation.html` placeholder |
+| Desktop mate nav link | Desktop mate | Yes | Nav → `desktop-mate.html` placeholder |
 | Support us nav link | Support us | Yes | Nav → `support.html` placeholder |
 | Sign in/up | (separate Notion page) | No | Deferred; not in Home nav spec |
 | Language EN/TC | EN / TC toggle | Yes | `js/language-toggle.js`; nav + action labels |
@@ -135,25 +143,25 @@ Last audited: 2026-06-12. MVP 1 home alignment shipped 2026-06-12.
 | Mascot + speech bubble | Character + teaching | Yes | `assets/mascot.png`, bubble layout matches calm tone |
 | Meditate action | `坐` / Meditation | Yes | Links to `meditate.html` |
 | Journal action | `錄` / Mood journaling | Yes | Links to `journal.html` (mock entry flow) |
-| Wind chime action | `聞` | Yes | Symbol tile → `wind-chime.html` |
-| Study action | `研` | Yes | Symbol tile → `study.html` |
+| Wind chime action | `聞` | Deferred | Removed from nav and home per product owner |
+| Study action | `研` | Deferred | Removed from nav and home per product owner |
 | Minimal non-noisy layout | Prominent quote, low clutter | Yes | Paper palette, handwritten font, sparse grid |
 | Time-based greeting | `Good evening, 觀石者` | Yes | `js/home-greeting.js` |
 
 #### Home page implementation tasks
 
 **MVP 1 — Static showcase (align nav and labels)**
-- [x] Update header nav to match Notion: Home, Meditation, Wind chime, Mood journaling, My account, Support us
+- [x] Update header nav: Home, Meditation, Mood journaling, My account, Support us (wind chime removed from scope)
 - [x] Add EN/TC language toggle UI (static for showcase; no i18n backend yet)
 - [x] Rename "Write" action tile to "Mood journaling" (or bilingual `錄`)
-- [x] Add placeholder pages for Wind chime, Support us, Account, Journal, Study
+- [x] Add placeholder pages for Support us, Account, Journal
 
 **MVP 1 — Wisdom banner**
 - [x] Replace static quote with a small curated quote list in JS (showcase rotation)
 - [x] Style quote area per Notion: prominent, minimalist, non-noisy (speech bubble already close)
 
 **MVP 2 — Clickable prototype**
-- [x] Wire action tiles to real routes: meditate, journal, wind chime, study
+- [x] Wire action tiles to real routes: meditate, journal
 - [x] Implement 24-hour local-time quote refresh (localStorage + date key)
 - [x] Add time-of-day greeting (`Good morning/evening, …`)
 

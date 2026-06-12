@@ -1,12 +1,12 @@
 const I18N_LABELS = {
   home: { en: "Home", tc: "主頁" },
   meditation: { en: "Meditation", tc: "冥想" },
-  windChime: { en: "Wind chime", tc: "風鈴" },
   journal: { en: "Mood journaling", tc: "情緒日記" },
   account: { en: "My account", tc: "我的帳戶" },
+  signIn: { en: "Sign in/up", tc: "登入／註冊" },
+  desktopMate: { en: "Desktop mate", tc: "桌面伙伴" },
   support: { en: "Support us", tc: "支持我們" },
   meditate: { en: "Meditate", tc: "坐" },
-  study: { en: "Study", tc: "研" },
   backHome: { en: "Back to Home", tc: "返回主頁" },
   accountHint: {
     en: "Your practice history and preferences will live here. This showcase page is coming soon.",
@@ -19,7 +19,29 @@ const I18N_LABELS = {
   practitionerName: { en: "Stone Watcher", tc: "觀石者" },
   companionCount: { en: "people are meditating with you", tc: "人與你一同靜坐" },
   start: { en: "Start", tc: "開始" },
-  aboutMeditation: { en: "About Meditation", tc: "關於冥想" },
+  aboutMeditation: { en: "About meditation", tc: "關於冥想" },
+  aboutWhat: { en: "What is meditation", tc: "什麼是冥想" },
+  aboutWhy: { en: "Why shall we do meditation", tc: "為什麼要冥想" },
+  aboutHow: { en: "How to do meditation", tc: "如何冥想" },
+  aboutMeditationHint: {
+    en: "Learning content from Notion will be added here. For now, begin with one quiet moment on the meditation page.",
+    tc: "Notion 的學習內容將加入這裡。現在，請先在冥想頁開始一刻寧靜。",
+  },
+  signInHint: {
+    en: "Email, Google, or Apple sign-in will live here. For now, continue as a guest and explore the practice flow.",
+    tc: "電郵、Google 或 Apple 登入將在此提供。現可先以訪客身份探索練習流程。",
+  },
+  desktopSilent: { en: "Silent mate", tc: "靜默伙伴" },
+  desktopTalk: { en: "Small talk", tc: "輕談" },
+  desktopReminder: { en: "Reminder", tc: "提醒" },
+  desktopMateHint: {
+    en: "A quiet desktop companion for your practice. This showcase page is coming soon.",
+    tc: "陪伴你練習的桌面伙伴。此展示頁面即將推出。",
+  },
+  supportHint: {
+    en: "Help Seed Garden grow as a calm companion for the Hong Kong meditation community. This showcase page is coming soon.",
+    tc: "支持 Seed Garden 成為香港冥想社群的寧靜伙伴。此展示頁面即將推出。",
+  },
   completeTitle: { en: "Peace and stillness is here", tc: "平安與寧靜，已在這裡" },
   completeBody: {
     en: "You gave yourself a quiet moment. Notice how you feel before you move on.",
