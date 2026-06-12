@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session | Seed Garden</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./meditation.css" />
+  </head>
+  <body class="meditation-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Primary">
+        <a href="./index.html">Home</a>
+        <a href="./meditate.html">Meditate</a>
+        <a href="#account">Account</a>
+        <a href="#language" class="nav-language">
+          <span class="globe" aria-hidden="true">🌐</span>
+          English
+        </a>
+      </nav>
+    </header>
+
+    <main id="main-content" class="session-canvas">
+      <p class="session-mode-label">Silence</p>
+
+      <div class="session-stage">
+        <video class="session-video" playsinline muted loop></video>
+        <div class="session-video-fallback" hidden>
+          <img src="./assets/mode-silence.png" alt="" />
+          <p>Video arriving soon — timer ready.</p>
+        </div>
+      </div>
+
+      <p class="session-timer" aria-live="polite" aria-atomic="true">45:00</p>
+
+      <div class="session-actions">
+        <button class="btn-session-play" type="button">Begin</button>
+        <button class="btn-session-end" type="button">End</button>
+      </div>
+    </main>
+
+    <script src="./js/meditation-config.js"></script>
+    <script src="./js/meditation-session.js"></script>
+  </body>
+</html>

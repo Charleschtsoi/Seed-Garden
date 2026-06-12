@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meditate | Seed Garden</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./meditation.css" />
+  </head>
+  <body class="meditation-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Primary">
+        <a href="./index.html">Home</a>
+        <a href="#sign-in">Sign in/up</a>
+        <a href="#account">Account</a>
+        <a href="#language" class="nav-language">
+          <span class="globe" aria-hidden="true">🌐</span>
+          English
+        </a>
+      </nav>
+    </header>
+
+    <main id="main-content" class="meditate-canvas">
+      <section class="mode-picker" aria-label="Meditation mode">
+        <button class="carousel-btn prev" type="button" aria-label="Previous mode">
+          ‹
+        </button>
+
+        <div class="mode-display">
+          <h1 class="mode-title">Silence</h1>
+          <p class="mode-live" aria-live="polite" aria-atomic="true"></p>
+          <img
+            class="mode-art"
+            src="./assets/mode-silence.png"
+            alt="Silence mode — calm green character in water"
+            width="220"
+            height="220"
+          />
+        </div>
+
+        <button class="carousel-btn next" type="button" aria-label="Next mode">
+          ›
+        </button>
+      </section>
+
+      <section class="duration-picker" aria-label="Duration">
+        <div class="duration-row">
+          <div
+            class="duration-chips"
+            role="radiogroup"
+            aria-label="Meditation duration"
+          ></div>
+        </div>
+      </section>
+
+      <button class="btn-start" type="button">Start</button>
+
+      <a class="about-link" href="#about-meditation">About Meditation</a>
+    </main>
+
+    <script src="./js/meditation-config.js"></script>
+    <script src="./js/meditate-setup.js"></script>
+  </body>
+</html>
