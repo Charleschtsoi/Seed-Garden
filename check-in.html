@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Session | Seed Garden</title>
+    <title>Emotion check-in | Seed Garden</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,15 +11,15 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="./meditation.css" />
+    <link rel="stylesheet" href="./flow.css" />
   </head>
-  <body class="meditation-page">
+  <body class="flow-page">
     <a class="skip-link" href="#main-content">Skip to content</a>
 
     <header class="site-header">
       <nav class="site-nav" aria-label="Primary">
         <a href="./index.html" data-i18n="home">Home</a>
-        <a href="./meditate.html" aria-current="page" data-i18n="meditation">Meditation</a>
+        <a href="./meditate.html" data-i18n="meditation">Meditation</a>
         <a href="./wind-chime.html" data-i18n="windChime">Wind chime</a>
         <a href="./journal.html" data-i18n="journal">Mood journaling</a>
         <a href="./account.html" data-i18n="account">My account</a>
@@ -31,28 +31,19 @@
       </nav>
     </header>
 
-    <main id="main-content" class="session-canvas">
-      <p class="session-mode-label">Silence</p>
-
-      <div class="session-stage">
-        <video class="session-video" playsinline muted loop></video>
-        <div class="session-video-fallback" hidden>
-          <img src="./assets/mode-silence.png" alt="" />
-          <p>Video arriving soon — timer ready.</p>
-        </div>
-      </div>
-
-      <p class="session-timer" aria-live="polite" aria-atomic="true">45:00</p>
-
-      <div class="session-actions">
-        <button class="btn-session-play" type="button">Begin</button>
-        <button class="btn-session-end" type="button">End</button>
-      </div>
+    <main id="main-content" class="flow-canvas">
+      <h1 class="flow-title" data-i18n="checkInTitle">How do you feel?</h1>
+      <p class="flow-body" data-i18n="checkInHint">Choose one feeling — there is no right answer.</p>
+      <div class="mood-chips" role="group" aria-label="Current mood"></div>
+      <button class="flow-primary btn-check-in-continue" type="button" disabled data-i18n="continueJournal">
+        Continue to journal
+      </button>
+      <a class="flow-secondary check-in-skip" href="./journal.html" data-i18n="skipCheckIn">Skip for now</a>
     </main>
 
     <script src="./js/i18n-labels.js"></script>
-    <script src="./js/language-toggle.js"></script>
     <script src="./js/meditation-config.js"></script>
-    <script src="./js/meditation-session.js"></script>
+    <script src="./js/language-toggle.js"></script>
+    <script src="./js/emotion-check-in.js"></script>
   </body>
 </html>

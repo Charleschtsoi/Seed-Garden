@@ -18,13 +18,16 @@
 
     <header class="site-header">
       <nav class="site-nav" aria-label="Primary">
-        <a href="./index.html">Home</a>
-        <a href="#sign-in">Sign in/up</a>
-        <a href="#account">Account</a>
-        <a href="#language" class="nav-language">
-          <span class="globe" aria-hidden="true">🌐</span>
-          English
-        </a>
+        <a href="./index.html" data-i18n="home">Home</a>
+        <a href="./meditate.html" aria-current="page" data-i18n="meditation">Meditation</a>
+        <a href="./wind-chime.html" data-i18n="windChime">Wind chime</a>
+        <a href="./journal.html" data-i18n="journal">Mood journaling</a>
+        <a href="./account.html" data-i18n="account">My account</a>
+        <a href="./support.html" data-i18n="support">Support us</a>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" class="lang-btn is-active" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" class="lang-btn" data-lang="tc" aria-pressed="false">TC</button>
+        </div>
       </nav>
     </header>
 
@@ -51,6 +54,8 @@
         </button>
       </section>
 
+      <p class="companion-line" data-companion-count>83 people are meditating with you</p>
+
       <section class="duration-picker" aria-label="Duration">
         <div class="duration-row">
           <div
@@ -61,11 +66,14 @@
         </div>
       </section>
 
-      <button class="btn-start" type="button">Start</button>
+      <button class="btn-start" type="button" data-i18n="start">Start</button>
 
-      <a class="about-link" href="#about-meditation">About Meditation</a>
+      <a class="about-link" href="./study.html" data-i18n="aboutMeditation">About Meditation</a>
     </main>
 
+    <script src="./js/i18n-labels.js"></script>
+    <script src="./js/meditate-companion.js"></script>
+    <script src="./js/language-toggle.js"></script>
     <script src="./js/meditation-config.js"></script>
     <script src="./js/meditate-setup.js"></script>
   </body>

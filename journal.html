@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mood journaling | Seed Garden</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./flow.css" />
+  </head>
+  <body class="flow-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Primary">
+        <a href="./index.html" data-i18n="home">Home</a>
+        <a href="./meditate.html" data-i18n="meditation">Meditation</a>
+        <a href="./wind-chime.html" data-i18n="windChime">Wind chime</a>
+        <a href="./journal.html" aria-current="page" data-i18n="journal">Mood journaling</a>
+        <a href="./account.html" data-i18n="account">My account</a>
+        <a href="./support.html" data-i18n="support">Support us</a>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" class="lang-btn is-active" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" class="lang-btn" data-lang="tc" aria-pressed="false">TC</button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content" class="flow-canvas flow-canvas-wide">
+      <h1 class="flow-title" data-i18n="journal">Mood journaling</h1>
+      <p class="journal-context" data-journal-context hidden></p>
+      <p class="flow-body" data-i18n="journalPrompt">
+        A few words about this moment — optional, but kind.
+      </p>
+
+      <form class="journal-form">
+        <label class="sr-only" for="journal-entry">Journal entry</label>
+        <textarea
+          id="journal-entry"
+          class="journal-textarea"
+          name="entry"
+          rows="5"
+          placeholder="..."
+        ></textarea>
+        <button class="flow-primary" type="submit" data-i18n="saveEntry">Save entry</button>
+      </form>
+
+      <p class="journal-saved" role="status" hidden data-i18n="entrySaved">Entry saved with kindness.</p>
+
+      <section class="journal-recent" aria-label="Recent reflections">
+        <h2 class="journal-recent-title" data-i18n="recentEntries">Recent reflections</h2>
+        <ul class="journal-recent-list" hidden></ul>
+      </section>
+
+      <a class="flow-secondary" href="./index.html" data-i18n="backHome">Back to Home</a>
+    </main>
+
+    <script src="./js/i18n-labels.js"></script>
+    <script src="./js/meditation-config.js"></script>
+    <script src="./js/language-toggle.js"></script>
+    <script src="./js/journal-entry.js"></script>
+  </body>
+</html>

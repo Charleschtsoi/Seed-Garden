@@ -5,6 +5,9 @@
   --ink-soft: #6b5a45;
   --bubble: #faf8f4;
   --shadow: rgba(75, 54, 33, 0.12);
+  --cta-brown: #b38b59;
+  --chip-selected: #d9c5a3;
+  --chip-border: rgba(75, 54, 33, 0.35);
 }
 
 *,
@@ -83,13 +86,46 @@ body {
   font-weight: 600;
 }
 
-.nav-language {
-  gap: 6px;
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border: 2px solid var(--ink-soft);
+  border-radius: 999px;
+  background: var(--bubble);
 }
 
-.globe {
-  font-size: 0.95em;
-  line-height: 1;
+.lang-btn {
+  font-family: inherit;
+  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+  font-weight: 600;
+  color: var(--ink-soft);
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  padding: 4px 10px;
+  min-height: 32px;
+  min-width: 40px;
+  cursor: pointer;
+  transition: background 140ms ease, color 140ms ease;
+}
+
+.lang-btn:hover,
+.lang-btn:focus-visible {
+  color: var(--ink);
+  outline: none;
+}
+
+.lang-btn.is-active {
+  color: var(--ink);
+  background: var(--paper);
+  box-shadow: 1px 2px 0 var(--shadow);
+}
+
+.lang-btn:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
 }
 
 .home-canvas {
@@ -106,6 +142,21 @@ body {
   place-items: center;
   align-content: center;
   padding: clamp(8px, 3vw, 32px) 0;
+}
+
+.home-greeting {
+  margin: 0 0 4px;
+  font-size: clamp(1.35rem, 3.5vw, 1.75rem);
+  font-weight: 600;
+  color: var(--ink);
+  text-align: center;
+}
+
+.companion-line {
+  margin: 0;
+  font-size: clamp(1rem, 2.6vw, 1.2rem);
+  color: var(--ink-soft);
+  text-align: center;
 }
 
 .mascot-block {
@@ -196,9 +247,29 @@ body {
   outline-offset: 4px;
 }
 
-.action-write {
+.action-journal {
   align-items: flex-end;
   text-align: right;
+}
+
+.action-chime,
+.action-study {
+  align-items: center;
+  text-align: center;
+}
+
+.action-symbol {
+  display: grid;
+  place-items: center;
+  width: clamp(88px, 22vw, 120px);
+  height: clamp(88px, 22vw, 120px);
+  border: 2px solid var(--ink-soft);
+  border-radius: 50%;
+  font-size: clamp(2.4rem, 7vw, 3.2rem);
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--bubble);
+  box-shadow: 2px 3px 0 var(--shadow);
 }
 
 .action-art {
@@ -212,7 +283,7 @@ body {
   max-width: min(100%, 240px);
 }
 
-.action-write .action-art {
+.action-journal .action-art {
   max-width: min(100%, 220px);
 }
 
@@ -222,19 +293,73 @@ body {
   letter-spacing: 0.02em;
 }
 
+.placeholder-page {
+  max-width: 36rem;
+  margin: 0 auto;
+  padding: clamp(32px, 8vw, 72px) clamp(20px, 4vw, 40px);
+  text-align: center;
+}
+
+.placeholder-page h1 {
+  margin: 0 0 16px;
+  font-size: clamp(2rem, 5vw, 2.6rem);
+  font-weight: 600;
+}
+
+.placeholder-page p {
+  margin: 0 0 28px;
+  font-size: clamp(1.2rem, 3vw, 1.45rem);
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.placeholder-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 20px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: clamp(1.15rem, 2.8vw, 1.35rem);
+  font-weight: 600;
+  text-decoration: none;
+  background: var(--bubble);
+  box-shadow: 2px 3px 0 var(--shadow);
+  transition: transform 140ms ease;
+}
+
+.placeholder-back:hover,
+.placeholder-back:focus-visible {
+  transform: translateY(-2px);
+  outline: 2px solid var(--ink-soft);
+  outline-offset: 4px;
+}
+
 @media (max-width: 520px) {
   .site-nav {
-    gap: 10px 16px;
-    font-size: 1.1rem;
+    gap: 8px 12px;
+    justify-content: center;
+  }
+
+  .site-nav a {
+    font-size: 1rem;
+  }
+
+  .lang-toggle {
+    width: 100%;
+    justify-content: center;
+    margin-top: 4px;
   }
 
   .home-actions {
-    grid-template-columns: 1fr;
-    gap: 28px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
 
   .action-tile,
-  .action-write {
+  .action-journal {
     align-items: center;
     text-align: center;
   }
@@ -257,7 +382,15 @@ body {
     justify-self: start;
   }
 
-  .action-write {
+  .action-journal {
+    justify-self: end;
+  }
+
+  .action-chime {
+    justify-self: start;
+  }
+
+  .action-study {
     justify-self: end;
   }
 }

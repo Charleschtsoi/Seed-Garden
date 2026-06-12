@@ -2,6 +2,7 @@
   const params = new URLSearchParams(window.location.search);
   const mode = getModeById(params.get("mode") ?? DEFAULT_MODE_ID);
   const duration = getValidDuration(params.get("duration"));
+  const isDemo = params.get("demo") === "1";
 
   const modeLabel = document.querySelector(".session-mode-label");
   const timerDisplay = document.querySelector(".session-timer");
@@ -15,10 +16,11 @@
     return;
   }
 
-  let remainingSeconds = duration * 60;
+  let remainingSeconds = isDemo ? 8 : duration * 60;
   let timerId = null;
   let isRunning = false;
   let videoAvailable = false;
+  let hasCompleted = false;
 
   if (modeLabel) {
     modeLabel.textContent = mode.label;
@@ -53,6 +55,22 @@
     isRunning = false;
   }
 
+  function goToCompletion() {
+    if (hasCompleted) {
+      return;
+    }
+
+    hasCompleted = true;
+    stopTimer();
+    video.pause();
+
+    const next = new URLSearchParams({
+      mode: mode.id,
+      duration: String(duration),
+    });
+    window.location.href = `./complete.html?${next.toString()}`;
+  }
+
   function startTimer() {
     if (isRunning || remainingSeconds <= 0) {
       return;
@@ -64,8 +82,7 @@
       updateTimerDisplay();
 
       if (remainingSeconds <= 0) {
-        stopTimer();
-        video.pause();
+        goToCompletion();
       }
     }, 1000);
   }

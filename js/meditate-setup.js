@@ -88,6 +88,11 @@
       mode: mode.id,
       duration: String(selectedDuration),
     });
+
+    if (new URLSearchParams(window.location.search).get("demo") === "1") {
+      params.set("demo", "1");
+    }
+
     window.location.href = `./session.html?${params.toString()}`;
   });
 

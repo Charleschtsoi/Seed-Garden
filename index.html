@@ -17,18 +17,22 @@
 
     <header class="site-header">
       <nav class="site-nav" aria-label="Primary">
-        <a href="./index.html" aria-current="page">Home</a>
-        <a href="#sign-in">Sign in/up</a>
-        <a href="#account">Account</a>
-        <a href="#language" class="nav-language">
-          <span class="globe" aria-hidden="true">🌐</span>
-          English
-        </a>
+        <a href="./index.html" aria-current="page" data-i18n="home">Home</a>
+        <a href="./meditate.html" data-i18n="meditation">Meditation</a>
+        <a href="./wind-chime.html" data-i18n="windChime">Wind chime</a>
+        <a href="./journal.html" data-i18n="journal">Mood journaling</a>
+        <a href="./account.html" data-i18n="account">My account</a>
+        <a href="./support.html" data-i18n="support">Support us</a>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" class="lang-btn is-active" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" class="lang-btn" data-lang="tc" aria-pressed="false">TC</button>
+        </div>
       </nav>
     </header>
 
     <main id="main-content" class="home-canvas">
       <section class="hero-center" aria-label="Welcome">
+        <p class="home-greeting" data-home-greeting>Good evening, Stone Watcher</p>
         <figure class="mascot-block">
           <img
             src="./assets/mascot.png"
@@ -38,7 +42,7 @@
             height="180"
           />
           <blockquote class="speech-bubble">
-            <p>&ldquo;Silence is the best reply to a fool...&rdquo;</p>
+            <p data-daily-quote>&ldquo;Silence is the best reply to a fool.&rdquo;</p>
           </blockquote>
         </figure>
       </section>
@@ -52,10 +56,10 @@
             width="280"
             height="200"
           />
-          <span class="action-label">Meditate</span>
+          <span class="action-label" data-i18n="meditate">Meditate</span>
         </a>
 
-        <a class="action-tile action-write" href="#write">
+        <a class="action-tile action-journal" href="./journal.html">
           <img
             src="./assets/write-illustration.png"
             alt="Grass, stones, and a snail"
@@ -63,9 +67,24 @@
             width="280"
             height="120"
           />
-          <span class="action-label">Write</span>
+          <span class="action-label" data-i18n="journal">Mood journaling</span>
+        </a>
+
+        <a class="action-tile action-chime" href="./wind-chime.html">
+          <span class="action-symbol" aria-hidden="true">聞</span>
+          <span class="action-label" data-i18n="windChime">Wind chime</span>
+        </a>
+
+        <a class="action-tile action-study" href="./study.html">
+          <span class="action-symbol" aria-hidden="true">研</span>
+          <span class="action-label" data-i18n="study">Study</span>
         </a>
       </section>
     </main>
+
+    <script src="./js/i18n-labels.js"></script>
+    <script src="./js/home-quotes.js"></script>
+    <script src="./js/home-greeting.js"></script>
+    <script src="./js/language-toggle.js"></script>
   </body>
 </html>

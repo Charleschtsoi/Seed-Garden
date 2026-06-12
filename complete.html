@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session complete | Seed Garden</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./flow.css" />
+  </head>
+  <body class="flow-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Primary">
+        <a href="./index.html" data-i18n="home">Home</a>
+        <a href="./meditate.html" data-i18n="meditation">Meditation</a>
+        <a href="./wind-chime.html" data-i18n="windChime">Wind chime</a>
+        <a href="./journal.html" data-i18n="journal">Mood journaling</a>
+        <a href="./account.html" data-i18n="account">My account</a>
+        <a href="./support.html" data-i18n="support">Support us</a>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" class="lang-btn is-active" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" class="lang-btn" data-lang="tc" aria-pressed="false">TC</button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content" class="flow-canvas">
+      <img
+        class="flow-mascot"
+        src="./assets/mascot.png"
+        alt="Seed Garden mascot, a calm green stone character"
+        width="180"
+        height="120"
+      />
+      <h1 class="flow-title" data-i18n="completeTitle">Peace and stillness is here</h1>
+      <p class="flow-summary" data-session-summary hidden></p>
+      <p class="flow-body" data-i18n="completeBody">
+        You gave yourself a quiet moment. Notice how you feel before you move on.
+      </p>
+      <a class="flow-primary" href="./check-in.html" data-check-in-link data-i18n="continueCheckIn">Check in with how you feel</a>
+      <a class="flow-secondary" href="./index.html" data-i18n="backHome">Back to Home</a>
+    </main>
+
+    <script src="./js/i18n-labels.js"></script>
+    <script src="./js/meditation-config.js"></script>
+    <script src="./js/language-toggle.js"></script>
+    <script>
+      (function () {
+        const params = new URLSearchParams(window.location.search);
+        const modeId = params.get("mode");
+        const duration = params.get("duration");
+        const link = document.querySelector("[data-check-in-link]");
+        const summary = document.querySelector("[data-session-summary]");
+
+        if (link && modeId && duration) {
+          link.href = `./check-in.html?mode=${encodeURIComponent(modeId)}&duration=${encodeURIComponent(duration)}`;
+        }
+
+        if (summary && modeId && duration) {
+          summary.textContent = `${getModeById(modeId).label} · ${duration} min`;
+          summary.hidden = false;
+        }
+      })();
+    </script>
+  </body>
+</html>
