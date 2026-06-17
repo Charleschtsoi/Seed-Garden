@@ -125,7 +125,7 @@ The home screen is the emotional anchor. It invites the user into a quiet space 
 
 #### Web implementation status (`index.html`)
 
-Last audited: 2026-06-12. MVP 1 home alignment shipped 2026-06-12.
+Last audited: 2026-06-16. MVP 1 complete; MVP 2.5 app polish shipped 2026-06-16.
 
 | Requirement | Notion / Figma | Built? | Notes |
 |-------------|----------------|--------|-------|
@@ -137,7 +137,7 @@ Last audited: 2026-06-12. MVP 1 home alignment shipped 2026-06-12.
 | About meditation nav link | About meditation | Yes | Nav → `about-meditation.html` placeholder |
 | Desktop mate nav link | Desktop mate | Yes | Nav → `desktop-mate.html` placeholder |
 | Support us nav link | Support us | Yes | Nav → `support.html` placeholder |
-| Sign in/up | (separate Notion page) | No | Deferred; not in Home nav spec |
+| Sign in/up auth flow | Email, Google, Apple, guest | No | Nav placeholder only — full auth is MVP 3 |
 | Language EN/TC | EN / TC toggle | Yes | `js/language-toggle.js`; nav + action labels |
 | Daily wisdom quote | 24h rotating koan/sutta | Yes | `js/home-quotes.js` — local date key + localStorage |
 | Mascot + speech bubble | Character + teaching | Yes | `assets/mascot.png`, bubble layout matches calm tone |
@@ -147,6 +147,14 @@ Last audited: 2026-06-12. MVP 1 home alignment shipped 2026-06-12.
 | Study action | `研` | Deferred | Removed from nav and home per product owner |
 | Minimal non-noisy layout | Prominent quote, low clutter | Yes | Paper palette, handwritten font, sparse grid |
 | Time-based greeting | `Good evening, 觀石者` | Yes | `js/home-greeting.js` |
+| Home tagline | Value promise under greeting | Yes | `data-i18n="homeTagline"` |
+| Ritual tile cards | Illustrations merged into paper background | Yes | Transparent tiles, glyphs + scene layout |
+| Primary Meditate hierarchy | Gold accent on meditate tile | Yes | `action-tile--primary` |
+| Quote attribution | Master/source under daily quote | Yes | `js/home-quotes.js` |
+| Guest hint footer | No account needed | Yes | `home-footer` |
+| Meta + Open Graph | Shareable link previews | Yes | `index.html` head |
+| Mobile hamburger nav | 8-link menu at 320px | Yes | `js/mobile-nav.js` |
+| Mascot subtle animation | Float with reduced-motion fallback | Yes | `styles.css` `@keyframes mascot-float` |
 
 #### Home page implementation tasks
 
@@ -184,6 +192,17 @@ flowchart LR
   checkin --> journal[journal.html]
   journal --> home
 ```
+
+**MVP 2.5 — App polish & first impression**
+- [x] Home tagline under greeting (EN/TC)
+- [x] Ritual tiles as soft cards with bilingual glyphs (坐/錄) and subtitles
+- [x] Meditate tile primary visual hierarchy (gold accent)
+- [x] Daily quote shows attribution
+- [x] Guest hint footer ("No account needed to begin")
+- [x] Meta description + Open Graph tags
+- [x] Mobile hamburger nav for 8-link menu (320px usable)
+- [x] Subtle mascot animation (respects prefers-reduced-motion)
+- [x] Nav uses readable sans font; hero keeps handwritten mood
 
 **MVP 3 — Functional app**
 - [ ] Connect wisdom banner to curated koan/sutta database

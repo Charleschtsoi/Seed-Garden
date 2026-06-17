@@ -17,7 +17,18 @@
     <a class="skip-link" href="#main-content">Skip to content</a>
 
     <header class="site-header">
-      <nav class="site-nav" aria-label="Primary">
+      <button
+        type="button"
+        class="nav-toggle"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="sr-only" data-i18n="navMenu">Menu</span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
         <a href="./index.html" data-i18n="home">Home</a>
         <a href="./meditate.html" data-i18n="meditation">Meditation</a>
         <a href="./journal.html" data-i18n="journal">Mood journaling</a>
@@ -36,7 +47,7 @@
     <main id="main-content" class="flow-canvas">
       <h1 class="flow-title" data-i18n="signIn">Sign in/up</h1>
       <p class="flow-body" data-i18n="signInHint">
-        Email, Google, or Apple sign-in will live here. For now, continue as a guest and explore the practice flow.
+        Sign in with email, Google, or Apple — or continue quietly as a guest.
       </p>
       <a class="flow-primary" href="./meditate.html" data-i18n="meditate">Meditate</a>
       <a class="flow-secondary" href="./index.html" data-i18n="backHome">Back to Home</a>
@@ -44,5 +55,6 @@
 
     <script src="./js/i18n-labels.js"></script>
     <script src="./js/language-toggle.js"></script>
+    <script src="./js/mobile-nav.js"></script>
   </body>
 </html>

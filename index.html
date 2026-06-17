@@ -3,7 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Seed Garden</title>
+    <title>Seed Garden — A quiet garden for your practice</title>
+    <meta
+      name="description"
+      content="Seed Garden is a calm meditation companion for the Hong Kong community. Begin with a quiet moment — no account needed."
+    />
+    <meta property="og:title" content="Seed Garden" />
+    <meta
+      property="og:description"
+      content="A quiet garden for your practice. Meditate, journal, and grow at your own pace."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./assets/mascot.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,7 +27,18 @@
     <a class="skip-link" href="#main-content">Skip to content</a>
 
     <header class="site-header">
-      <nav class="site-nav" aria-label="Primary">
+      <button
+        type="button"
+        class="nav-toggle"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="sr-only" data-i18n="navMenu">Menu</span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
         <a href="./index.html" aria-current="page" data-i18n="home">Home</a>
         <a href="./meditate.html" data-i18n="meditation">Meditation</a>
         <a href="./journal.html" data-i18n="journal">Mood journaling</a>
@@ -35,6 +57,7 @@
     <main id="main-content" class="home-canvas">
       <section class="hero-center" aria-label="Welcome">
         <p class="home-greeting" data-home-greeting>Good evening, Stone Watcher</p>
+        <p class="home-tagline" data-i18n="homeTagline">A quiet garden for your practice.</p>
         <figure class="mascot-block">
           <img
             src="./assets/mascot.png"
@@ -45,38 +68,51 @@
           />
           <blockquote class="speech-bubble">
             <p data-daily-quote>&ldquo;Silence is the best reply to a fool.&rdquo;</p>
+            <cite class="quote-attribution" data-daily-quote-attribution>— Zen teaching</cite>
           </blockquote>
         </figure>
       </section>
 
       <section class="home-actions" aria-label="Main actions">
-        <a class="action-tile action-meditate" href="./meditate.html">
-          <img
-            src="./assets/meditate-illustration.png"
-            alt="Lotus flower with a dragonfly"
-            class="action-art"
-            width="280"
-            height="200"
-          />
-          <span class="action-label" data-i18n="meditate">Meditate</span>
+        <a class="action-tile action-tile--primary action-meditate" href="./meditate.html">
+          <span class="action-glyph" aria-hidden="true" data-i18n="meditateGlyph">坐</span>
+          <div class="action-scene">
+            <img
+              src="./assets/meditate-illustration.png"
+              alt="Lotus flower with a dragonfly — Meditate"
+              class="action-art"
+              width="280"
+              height="200"
+            />
+          </div>
+          <span class="action-subtitle" data-i18n="meditateSubtitle">Sit for a few minutes</span>
         </a>
 
         <a class="action-tile action-journal" href="./journal.html">
-          <img
-            src="./assets/write-illustration.png"
-            alt="Grass, stones, and a snail"
-            class="action-art"
-            width="280"
-            height="120"
-          />
-          <span class="action-label" data-i18n="journal">Mood journaling</span>
+          <span class="action-glyph" aria-hidden="true" data-i18n="journalGlyph">錄</span>
+          <div class="action-scene">
+            <img
+              src="./assets/write-illustration.png"
+              alt="Grass, stones, and a snail — Write"
+              class="action-art"
+              width="280"
+              height="120"
+            />
+          </div>
+          <span class="action-subtitle" data-i18n="journalSubtitle">Name how you feel</span>
         </a>
       </section>
+
+      <footer class="home-footer">
+        <p class="guest-hint" data-i18n="guestHint">No account needed to begin.</p>
+        <a class="home-footer-link" href="./support.html" data-i18n="support">Support us</a>
+      </footer>
     </main>
 
     <script src="./js/i18n-labels.js"></script>
     <script src="./js/home-quotes.js"></script>
     <script src="./js/home-greeting.js"></script>
     <script src="./js/language-toggle.js"></script>
+    <script src="./js/mobile-nav.js"></script>
   </body>
 </html>

@@ -1,0 +1,229 @@
+.mate-page {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100svh - 72px);
+}
+
+.mate-controls {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(12px, 2.5vw, 18px);
+  padding: clamp(20px, 4vw, 32px) clamp(20px, 4vw, 40px) clamp(12px, 2vw, 16px);
+  text-align: center;
+}
+
+.mate-title {
+  margin: 0;
+  font-size: clamp(1.75rem, 4.5vw, 2.4rem);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.mate-hint {
+  margin: 0;
+  max-width: 36ch;
+  font-size: clamp(1.05rem, 2.6vw, 1.25rem);
+  color: var(--ink-soft);
+  line-height: 1.45;
+}
+
+.mate-mode-label {
+  margin: 0;
+  font-size: clamp(1rem, 2.4vw, 1.15rem);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.mate-modes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.mate-mode-btn {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: clamp(0.9rem, 2.2vw, 1rem);
+  font-weight: 600;
+  color: var(--ink-soft);
+  background: var(--bubble);
+  border: 2px solid var(--chip-border);
+  border-radius: 999px;
+  padding: 8px 16px;
+  min-height: 44px;
+  cursor: pointer;
+  transition: background 140ms ease, border-color 140ms ease, color 140ms ease;
+}
+
+.mate-mode-btn:hover,
+.mate-mode-btn:focus-visible {
+  color: var(--ink);
+  border-color: var(--ink-soft);
+  outline: none;
+}
+
+.mate-mode-btn.is-active {
+  color: var(--ink);
+  background: var(--chip-selected);
+  border-color: var(--ink-soft);
+}
+
+.mate-reset-btn {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  font-weight: 500;
+  color: var(--ink-soft);
+  background: transparent;
+  border: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding: 6px 10px;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+.mate-reset-btn:hover,
+.mate-reset-btn:focus-visible {
+  color: var(--ink);
+}
+
+.mate-stage {
+  position: relative;
+  flex: 1;
+  min-height: clamp(280px, 50svh, 520px);
+  margin: 0 clamp(12px, 3vw, 24px) clamp(16px, 3vw, 28px);
+  border-radius: 20px;
+  background:
+    radial-gradient(ellipse 70% 45% at 20% 80%, rgba(150, 140, 115, 0.12), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 80% 75%, rgba(140, 130, 105, 0.1), transparent 50%),
+    linear-gradient(180deg, rgba(250, 248, 244, 0.35) 0%, transparent 100%);
+  border: 1.5px dashed rgba(75, 54, 33, 0.18);
+  overflow: hidden;
+  touch-action: none;
+}
+
+.mate-widget {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  width: clamp(88px, 22vw, 128px);
+  transform: translate(-50%, -50%);
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  z-index: 2;
+}
+
+.mate-widget.is-dragging {
+  cursor: grabbing;
+  z-index: 3;
+}
+
+.mate-widget:focus-visible {
+  outline: 2px dashed var(--ink-soft);
+  outline-offset: 6px;
+  border-radius: 50%;
+}
+
+.mate-widget img {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  animation: mascot-float 4s ease-in-out infinite;
+}
+
+.mate-widget.is-dragging img {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mate-widget img {
+    animation: none;
+  }
+}
+
+.mate-bubble {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: min(240px, 70vw);
+  margin: 0;
+  padding: 10px 14px;
+  background: var(--bubble);
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+  box-shadow: 2px 3px 0 var(--shadow);
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.35;
+  text-align: center;
+  pointer-events: auto;
+}
+
+.mate-bubble::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid var(--ink);
+}
+
+.mate-bubble::before {
+  content: "";
+  position: absolute;
+  top: calc(100% - 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid var(--bubble);
+  z-index: 1;
+}
+
+.mate-bubble[hidden] {
+  display: none;
+}
+
+.mate-bubble-link {
+  display: inline-block;
+  margin-top: 6px;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: var(--cta-brown);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.mate-bubble-dismiss {
+  display: block;
+  margin: 8px auto 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.85em;
+  font-weight: 500;
+  color: var(--ink-soft);
+  background: none;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 4px;
+}
+
+@media (max-width: 520px) {
+  .mate-stage {
+    min-height: clamp(240px, 42svh, 400px);
+  }
+}

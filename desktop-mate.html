@@ -12,12 +12,24 @@
     />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="./flow.css" />
+    <link rel="stylesheet" href="./desktop-mate.css" />
   </head>
   <body class="flow-page">
     <a class="skip-link" href="#main-content">Skip to content</a>
 
     <header class="site-header">
-      <nav class="site-nav" aria-label="Primary">
+      <button
+        type="button"
+        class="nav-toggle"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="sr-only" data-i18n="navMenu">Menu</span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
         <a href="./index.html" data-i18n="home">Home</a>
         <a href="./meditate.html" data-i18n="meditation">Meditation</a>
         <a href="./journal.html" data-i18n="journal">Mood journaling</a>
@@ -33,20 +45,70 @@
       </nav>
     </header>
 
-    <main id="main-content" class="flow-canvas">
-      <h1 class="flow-title" data-i18n="desktopMate">Desktop mate</h1>
-      <ul class="about-list">
-        <li data-i18n="desktopSilent">Silent mate</li>
-        <li data-i18n="desktopTalk">Small talk</li>
-        <li data-i18n="desktopReminder">Reminder</li>
-      </ul>
-      <p class="flow-body" data-i18n="desktopMateHint">
-        A quiet desktop companion for your practice. This showcase page is coming soon.
-      </p>
-      <a class="flow-secondary" href="./index.html" data-i18n="backHome">Back to Home</a>
+    <main id="main-content" class="mate-page">
+      <section class="mate-controls" aria-label="Desktop mate settings">
+        <h1 class="mate-title" data-i18n="desktopMate">Desktop mate</h1>
+        <p class="mate-hint" data-i18n="desktopMateHint">
+          Drag your mate anywhere in the garden below. Choose a companion mode and keep them close while you work or rest.
+        </p>
+        <p class="mate-mode-label" data-i18n="desktopMateModeLabel">Companion mode</p>
+        <div class="mate-modes" role="group" aria-label="Companion mode">
+          <button
+            type="button"
+            class="mate-mode-btn is-active"
+            data-mode="silent"
+            aria-pressed="true"
+            data-i18n="desktopSilent"
+          >
+            Silent mate
+          </button>
+          <button
+            type="button"
+            class="mate-mode-btn"
+            data-mode="talk"
+            aria-pressed="false"
+            data-i18n="desktopTalk"
+          >
+            Small talk
+          </button>
+          <button
+            type="button"
+            class="mate-mode-btn"
+            data-mode="reminder"
+            aria-pressed="false"
+            data-i18n="desktopReminder"
+          >
+            Reminder
+          </button>
+        </div>
+        <button type="button" class="mate-reset-btn" data-reset-mate-position data-i18n="desktopResetPosition">
+          Reset position
+        </button>
+      </section>
+
+      <section class="mate-stage" id="mate-stage" aria-label="Mate garden — drag your companion here">
+        <div
+          class="mate-widget"
+          id="mate-widget"
+          tabindex="0"
+          role="img"
+          aria-label="Seed Garden mascot companion"
+        >
+          <blockquote class="mate-bubble" id="mate-bubble" hidden></blockquote>
+          <img
+            src="./assets/mascot.png"
+            alt=""
+            width="128"
+            height="128"
+            draggable="false"
+          />
+        </div>
+      </section>
     </main>
 
     <script src="./js/i18n-labels.js"></script>
     <script src="./js/language-toggle.js"></script>
+    <script src="./js/mobile-nav.js"></script>
+    <script src="./js/desktop-mate.js"></script>
   </body>
 </html>
