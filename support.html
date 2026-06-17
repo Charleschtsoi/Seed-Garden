@@ -20,6 +20,7 @@
       <nav class="site-nav" aria-label="Primary">
         <a href="./index.html" data-i18n="home">Home</a>
         <a href="./meditate.html" data-i18n="meditation">Meditation</a>
+        <a href="./wind-chime.html" data-i18n="windChime">Wind chime</a>
         <a href="./journal.html" data-i18n="journal">Mood journaling</a>
         <a href="./account.html" data-i18n="account">My account</a>
         <a href="./sign-in.html" data-i18n="signIn">Sign in/up</a>
@@ -33,10 +34,54 @@
       </nav>
     </header>
 
-    <main id="main-content" class="flow-canvas">
+    <main id="main-content" class="flow-canvas flow-canvas-wide">
       <h1 class="flow-title" data-i18n="support">Support us</h1>
+      <p class="flow-body" data-i18n="supportIntro">
+        Help Seed Garden grow as a calm companion for the Hong Kong meditation community.
+      </p>
+
+      <section class="static-card-list" aria-label="Support options">
+        <article class="static-card">
+          <h2 data-i18n="supportFeedback">Share feedback</h2>
+          <p data-i18n="supportFeedbackHint">Tell us what felt supportive, confusing, or missing.</p>
+          <form class="static-form">
+            <label class="sr-only" for="support-feedback">Feedback</label>
+            <textarea
+              id="support-feedback"
+              class="journal-textarea"
+              name="feedback"
+              rows="4"
+              placeholder="..."
+            ></textarea>
+            <button class="flow-secondary" type="button" data-i18n="sendFeedback">Send feedback</button>
+          </form>
+        </article>
+
+        <article class="static-card">
+          <h2 data-i18n="supportDonation">Make a small offering</h2>
+          <p data-i18n="supportDonationHint">Prototype donation tiers for the Hong Kong community.</p>
+          <div class="amount-grid" role="group" aria-label="Donation amount">
+            <button type="button" class="amount-chip" data-i18n="hkdFive">HKD 5</button>
+            <button type="button" class="amount-chip" data-i18n="hkdFifteen">HKD 15</button>
+            <button type="button" class="amount-chip" data-i18n="hkdThirty">HKD 30</button>
+          </div>
+          <div class="field-row">
+            <label for="other-amount" data-i18n="otherAmount">Other amount</label>
+            <input id="other-amount" type="number" inputmode="decimal" min="0" />
+          </div>
+          <div class="field-row">
+            <label for="support-currency" data-i18n="currency">Currency</label>
+            <select id="support-currency">
+              <option>HKD</option>
+              <option>USD</option>
+            </select>
+          </div>
+          <button class="flow-primary" type="button" data-i18n="offerSupport">Offer support</button>
+        </article>
+      </section>
+
       <p class="flow-body" data-i18n="supportHint">
-        Help Seed Garden grow as a calm companion for the Hong Kong meditation community. This showcase page is coming soon.
+        Payments and message delivery are static in MVP1.
       </p>
       <a class="flow-secondary" href="./index.html" data-i18n="backHome">Back to Home</a>
     </main>

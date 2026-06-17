@@ -62,6 +62,168 @@
   max-width: 32ch;
 }
 
+.static-card-list {
+  display: grid;
+  gap: 14px;
+  width: 100%;
+}
+
+.static-card {
+  width: 100%;
+  padding: clamp(16px, 4vw, 22px);
+  border: 1.5px solid rgba(75, 54, 33, 0.2);
+  border-radius: 18px;
+  background: var(--bubble);
+  box-shadow: 1px 2px 0 var(--shadow);
+  text-align: left;
+}
+
+.static-card h2,
+.static-card p {
+  margin: 0;
+}
+
+.static-card h2 {
+  font-size: clamp(1.25rem, 3.2vw, 1.55rem);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.static-card p {
+  margin-top: 8px;
+  font-size: clamp(1.05rem, 2.7vw, 1.25rem);
+  color: var(--ink-soft);
+  line-height: 1.45;
+}
+
+.static-form,
+.auth-actions {
+  display: grid;
+  gap: 14px;
+  width: 100%;
+}
+
+.auth-form {
+  max-width: 24rem;
+}
+
+.field-row {
+  display: grid;
+  gap: 6px;
+  width: 100%;
+}
+
+.field-row label {
+  font-size: clamp(1.05rem, 2.7vw, 1.2rem);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.field-row input,
+.field-row select {
+  min-height: 46px;
+  width: 100%;
+  padding: 8px 12px;
+  border: 2px solid var(--ink-soft);
+  border-radius: 14px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: clamp(1.05rem, 2.7vw, 1.2rem);
+}
+
+.field-row input:focus,
+.field-row select:focus {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.amount-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 14px 0;
+}
+
+.amount-chip {
+  min-height: 44px;
+  padding: 8px;
+  border: 2px solid var(--chip-border);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.amount-chip:hover,
+.amount-chip:focus-visible {
+  outline: 2px solid var(--ink-soft);
+  outline-offset: 2px;
+}
+
+.account-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.stat-card {
+  text-align: center;
+}
+
+.stat-card span,
+.stat-card strong {
+  display: block;
+}
+
+.stat-card span {
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  color: var(--ink-soft);
+}
+
+.stat-card strong {
+  margin-top: 6px;
+  font-size: clamp(1.65rem, 5vw, 2.2rem);
+  color: var(--ink);
+}
+
+.wind-chime-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  width: min(100%, 180px);
+  height: 150px;
+  margin-bottom: 4px;
+  border-top: 3px solid var(--ink-soft);
+}
+
+.wind-chime-visual::before {
+  content: "";
+  position: absolute;
+  top: -16px;
+  width: 70px;
+  height: 26px;
+  border: 2px solid var(--ink-soft);
+  border-radius: 999px 999px 10px 10px;
+  background: var(--bubble);
+}
+
+.wind-chime-visual span {
+  width: 18px;
+  height: 104px;
+  margin-top: 18px;
+  border: 2px solid var(--ink-soft);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #f7f0df, #d8c49d);
+  box-shadow: 1px 2px 0 var(--shadow);
+}
+
+.wind-chime-visual span:nth-child(2) {
+  height: 128px;
+}
+
 .flow-primary,
 .flow-secondary {
   display: inline-flex;
@@ -246,6 +408,13 @@
   font-size: clamp(1.05rem, 2.6vw, 1.25rem);
   font-weight: 600;
   color: var(--ink);
+}
+
+@media (max-width: 520px) {
+  .account-grid,
+  .amount-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .sr-only {
